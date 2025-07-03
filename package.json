@@ -1,6 +1,6 @@
 {
   "name": "@evrenonur/ai-project-tracker-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Yapay zeka proje geliştirme sürecini detaylı olarak takip eden MCP servisi",
   "main": "dist/index.js",
   "type": "module",
