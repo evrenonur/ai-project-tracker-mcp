@@ -1,5 +1,5 @@
 {
-  "name": "@ai-project-tracker/mcp",
+  "name": "@evrenonur/ai-project-tracker-mcp",
   "version": "1.0.0",
   "description": "Yapay zeka proje geliştirme sürecini detaylı olarak takip eden MCP servisi",
   "main": "dist/index.js",
@@ -27,7 +27,7 @@
     "postversion": "git push && git push --tags"
   },
   "bin": {
-    "ai-project-tracker-mcp": "./dist/index.js"
+    "evrenonur-ai-project-tracker-mcp": "./dist/index.js"
   },
   "keywords": [
     "mcp",
@@ -69,4 +69,4 @@
     "dist/**/*",
     "README.md"
   ]
-} 
+}
