@@ -9,6 +9,7 @@ export declare class DatabaseManager {
     createSession(session: Omit<ProjectSession, 'id'>): Promise<string>;
     getSession(sessionId: string): Promise<ProjectSession | null>;
     updateSession(sessionId: string, updates: Partial<ProjectSession>): Promise<void>;
+    getAllSessions(status?: string, limit?: number): Promise<ProjectSession[]>;
     createStep(step: Omit<ProjectStep, 'id'>): Promise<string>;
     updateStep(stepId: string, updates: Partial<ProjectStep>): Promise<void>;
     getSteps(sessionId: string): Promise<ProjectStep[]>;

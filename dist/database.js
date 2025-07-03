@@ -214,6 +214,32 @@ export class DatabaseManager {
         values.push(sessionId);
         await this.runQuery(sql, values);
     }
+    async getAllSessions(status, limit) {
+        let sql = `SELECT * FROM project_sessions`;
+        const params = [];
+        if (status) {
+            sql += ` WHERE status = ?`;
+            params.push(status);
+        }
+        sql += ` ORDER BY start_time DESC`;
+        if (limit) {
+            sql += ` LIMIT ?`;
+            params.push(limit);
+        }
+        const rows = await this.allQuery(sql, params);
+        return rows.map(row => ({
+            id: row.id,
+            projectName: row.project_name,
+            description: row.description,
+            startTime: new Date(row.start_time),
+            endTime: row.end_time ? new Date(row.end_time) : undefined,
+            status: row.status,
+            totalSteps: row.total_steps,
+            currentStep: row.current_step,
+            aiModel: row.ai_model,
+            metadata: JSON.parse(row.metadata || '{}')
+        }));
+    }
     // Proje adımı işlemleri
     async createStep(step) {
         const id = uuidv4();

@@ -15,7 +15,7 @@ export declare class AIProjectTracker {
     generateReport(sessionId: string): Promise<ProjectReport>;
     private generateSummary;
     private addTimelineEvent;
-    listSessions(): Promise<ProjectSession[]>;
+    listSessions(status?: string, limit?: number): Promise<ProjectSession[]>;
     printReport(sessionId: string): Promise<void>;
     close(): void;
 }

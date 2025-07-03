@@ -27,7 +27,7 @@
     "postversion": "git push && git push --tags"
   },
   "bin": {
-    "evrenonur-ai-project-tracker-mcp": "./dist/index.js"
+    "evrenonur-ai-project-tracker-mcp": "dist/index.js"
   },
   "keywords": [
     "mcp",

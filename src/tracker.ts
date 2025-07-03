@@ -295,9 +295,8 @@ export class AIProjectTracker {
   }
 
   // Mevcut oturumları listeleme
-  async listSessions(): Promise<ProjectSession[]> {
-    // Bu fonksiyon geliştirilecek - şimdilik boş döndürüyoruz
-    return [];
+  async listSessions(status?: string, limit?: number): Promise<ProjectSession[]> {
+    return await this.db.getAllSessions(status, limit);
   }
 
   // Güzel formatlanmış rapor yazdırma

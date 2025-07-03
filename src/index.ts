@@ -225,12 +225,15 @@ class AIProjectTrackerMCP {
           };
 
         case 'list_sessions':
-          const sessions = await this.tracker.listSessions();
-          // Filtreleme ve sınırlama burada uygulanacak
+          const sessions = await this.tracker.listSessions(args.status, args.limit);
           return {
             success: true,
             data: { sessions, count: sessions.length },
-            metadata: { action: 'sessions_listed' }
+            metadata: { 
+              action: 'sessions_listed', 
+              filter: args.status || 'none',
+              limit: args.limit || 'none'
+            }
           };
 
         default:

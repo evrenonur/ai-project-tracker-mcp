@@ -207,9 +207,8 @@ export class AIProjectTracker {
         await this.db.addTimelineEvent(event);
     }
     // Mevcut oturumları listeleme
-    async listSessions() {
-        // Bu fonksiyon geliştirilecek - şimdilik boş döndürüyoruz
-        return [];
+    async listSessions(status, limit) {
+        return await this.db.getAllSessions(status, limit);
     }
     // Güzel formatlanmış rapor yazdırma
     async printReport(sessionId) {
